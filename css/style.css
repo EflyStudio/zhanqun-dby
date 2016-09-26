@@ -9,11 +9,19 @@ img{border: none;vertical-align: top;}
 table{border-collapse: collapse;}
 input,textarea{outline: none;}
 textarea{resize: none;overflow: auto;}
-body{font-size: 12px;font-family: "微软雅黑";}
+body{font-size: 14px;font-family: "微软雅黑";}
 /* public */
 .clear{zoom:1;}
 .clear:after{content: '';display: block;clear: both;}
 .fl{float: left;}
 .fr{float: right;}
-.title .line{width:396px;margin-top:1px solid #e5e5e5;}
-.title .text{width:;height:;background:url(../images/as_16.png)
+.title-hor{width:380px;height:18px;border-bottom:1px solid #eeeeee;color:#333;font-size:20px;padding:10px 0 20px 12px;margin-top:14px;background:url(../images/titlt-h-bg.jpg) left no-repeat;}
+//.title-ver {width:1200px;height:34px;background:url(../images/title-bg.png) no-repeat;}
+
+#header,main,.section1{width:1000px;margin:0 auto;}
+.description,.section1 .wrap{width:900px;}
+#header .description{margin:30px auto;color:#333;line-height:24px;text-indent:2em;}
+
+.main .section1{background:#f8f8f8;height:312px;}
+.section1 .wrap{margin:0 auto;}
+.section1 .more{font-size:14px;color:#6b6b6b;margin-right:6px;}
