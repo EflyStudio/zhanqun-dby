@@ -10,7 +10,7 @@ $(function () {
             }
         },
 		title:{
-			text:'进度示意图',
+			text:'',
 			margin:1,
 			},
         tooltip: {
@@ -57,16 +57,17 @@ $(function(){
     var len =picList.find("li").length; 
     
     $("#prev").click(function(){
-        if(!picList.is(":animated")){
+        if (!picList.is(":animated")){
             if(current >=len-4){
-        stop();
+            $(this).hide();
+            stop();
         }
-    else{
+    else {
+        $("next").show();
         current++;
         picList.animate({left: "-=" + width},500);
         }
     }
-        return false;
     
     });
    
@@ -74,16 +75,16 @@ $(function(){
     
 
     $("#next").click(function(){
-        if(!picList.is(":animated")){
+        if (!picList.is(":animated")){
             if(current == 0){
+            $(this).hide();
             stop();
         }
-    else{
+    else {
         current--;
            picList.animate({left: "+=" + width},500);
         }
     }
-        return false;
     
     });
 })
