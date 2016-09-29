@@ -1,3 +1,4 @@
+// sdpie
 $(function () {
     $('#container').highcharts({
         chart: {
@@ -47,3 +48,42 @@ $(function () {
         }]
     });
 });
+
+// 轮播
+$(function(){
+    var current=0;
+    var width = "226px";
+    var picList=$(".pic-list");
+    var len =picList.find("li").length; 
+    
+    $("#prev").click(function(){
+        if(!picList.is(":animated")){
+            if(current >=len-4){
+        stop();
+        }
+    else{
+        current++;
+        picList.animate({left: "-=" + width},500);
+        }
+    }
+        return false;
+    
+    });
+   
+
+    
+
+    $("#next").click(function(){
+        if(!picList.is(":animated")){
+            if(current == 0){
+            stop();
+        }
+    else{
+        current--;
+           picList.animate({left: "+=" + width},500);
+        }
+    }
+        return false;
+    
+    });
+})
