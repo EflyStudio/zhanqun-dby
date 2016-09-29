@@ -11,7 +11,7 @@ $(function () {
         },
 		title:{
 			text:'',
-			margin:1,
+			margin:1
 			},
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -35,7 +35,7 @@ $(function () {
 					name:'未迁移',
 					y: 80,
                     sliced: true,
-                    selected: true,
+                    selected: true
 					},
                 {
                     name: '已迁移',
@@ -60,29 +60,29 @@ $(function(){
         if (!picList.is(":animated")){
             if(current >=len-4){
             $(this).hide();
-            stop();
+            current=len-4;
         }
     else {
-        $("next").show();
+        $("#next").show();
         current++;
-        picList.animate({left: "-=" + width},500);
+        picList.stop(true).animate({left: "-=" + width},500);
         }
-    }
-    
+    }   
     });
    
 
     
-
+     $("#next").hide();
     $("#next").click(function(){
         if (!picList.is(":animated")){
-            if(current == 0){
+            if(current<=0){
             $(this).hide();
-            stop();
-        }
-    else {
-        current--;
-           picList.animate({left: "+=" + width},500);
+            current=0;  
+
+        }else {
+            current--;
+        $("#prev").show();
+        picList.stop(true).animate({left: "+=" + width},500);
         }
     }
     
